@@ -1,0 +1,208 @@
+# STYLING GUIDE ↴
+# https://starship.rs/advanced-config/#style-strings
+
+add_newline = true # Inserts a blank line between shell prompts
+
+[package] # package module
+disabled = true
+
+# DON'T TOUCH THIS -- It removes "in $package" from prompt when in Rust project.
+format = '''
+[┌───────────────────>](bold green)
+[│](bold green)$directory$rust$package
+[└─>](bold green) '''
+
+[battery]
+full_symbol = '🔋 '
+charging_symbol = '⚡️ '
+discharging_symbol = '💀 '
+
+[[battery.display]]
+threshold = 0 # disabled
+style = 'bold blue'
+
+# CONFIGURATION STARTS ----------->
+
+[character] 
+success_symbol = "[❯](blink fg:#f30065)"
+error_symbol = "[❯](inverted red)"
+vimcmd_symbol = "[❮](green)"
+
+[directory]
+home_symbol = "⌂"
+style = "dimmed white"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style="fg:#ffc972"
+
+[username]
+show_always = true
+style_user = "fg:#9A348E"
+style_root = "fg:#9A348E"
+format = '[$user ]($style)'
+disabled = true
+
+[git_branch]
+style = "blue"
+ignore_branches = ["master"]
+# symbol = "🍀"
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = '[🍒 PICKING](bold red)'
+
+# ~/.config/starship.toml
+
+[git_status]
+format = '([$all_status$ahead_behind]($style)) '
+conflicted = '[⭕](inverted red)'
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+up_to_date = '[  ✓](bold white)'
+untracked = '[ \($count\) untracked](dimmed yellow)'
+stashed = '📦'
+modified = '[\($count\) modified](dimmed red)'
+staged = '[ \($count\) staged ](blink green)'
+renamed = '[ \($count\) renamed ](inverted yellow)'
+deleted = '[ \($count\) deleted ](inverted white)'
+
+# --  ADD ANY NEW STUFF BEFORE THIS --
+#
+# The following is for removing `via` & `$version` FROM Default Prompt.
+
+[bun]
+format = "[$symbol]($style)"
+
+[buf]
+format = "[$symbol]($style)"
+
+[cmake]
+format = "[$symbol]($style)"
+
+[cobol]
+format = "[$symbol]($style)"
+
+[crystal]
+format = "[$symbol]($style)"
+
+[daml]
+format = "[$symbol]($style)"
+
+[dart]
+format = "[$symbol]($style)"
+
+[deno]
+format = "[$symbol]($style)"
+
+[dotnet]
+format = "[$symbol(🎯 $tfm )]($style)"
+
+[elixir]
+format = '[$symbol]($style)'
+
+[elm]
+format = '[$symbol]($style)'
+
+[erlang]
+format = '[$symbol]($style)'
+
+[fennel]
+format = '[$symbol]($style)'
+
+[golang]
+symbol = "Go "
+style = "fg:#86BBD8"
+format = '[$symbol ]($style)'
+
+[gradle]
+format = '[$symbol]($style)'
+
+[haxe]
+format = '[$symbol]($style)'
+
+[helm]
+format = '[$symbol]($style)'
+
+[java]
+format = '[$symbol]($style)'
+
+[julia]
+format = '[$symbol]($style)'
+
+[kotlin]
+format = '[$symbol]($style)'
+
+[lua]
+format = '[$symbol]($style)'
+
+[meson]
+format = '[$symbol]($style)'
+
+[nim]
+format = '[$symbol]($style)'
+
+[nodejs]
+format = '[$symbol]($style)'
+
+[ocaml]
+format = '[$symbol(\($switch_indicator$switch_name\) )]($style)'
+
+[opa]
+format = '[$symbol]($style)'
+
+[perl]
+format = '[$symbol]($style)'
+
+[php]
+format = '[$symbol]($style)'
+
+[pulumi]
+format = '[$symbol$stack]($style)'
+
+[purescript]
+format = '[$symbol]($style)'
+
+[python]
+style = "fg:#86BBD8" # change color
+format = '$virtualenv [${symbol}]($style)'
+
+[quarto]
+format = '[$symbol]($style)'
+
+[raku]
+format = '[$symbol]($style)'
+
+[red]
+format = '[$symbol]($style)'
+
+[rlang]
+format = '[$symbol]($style)'
+
+[ruby]
+format = '[$symbol]($style)'
+
+[rust]
+symbol = "  the crab language"
+style = " fg:#FF8705"
+format = '[$symbol ]($style)'
+
+[solidity]
+format = '[$symbol]($style)'
+
+[typst]
+format = '[$symbol]($style)'
+
+[swift]
+format = '[$symbol]($style)'
+
+[vagrant]
+format = '[$symbol]($style)'
+
+[vlang]
+format = '[$symbol]($style)'
+
+[zig]
+format = '[$symbol]($style)'
+
