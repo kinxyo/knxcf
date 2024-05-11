@@ -1,4 +1,4 @@
-# My config files (Ubuntu)
+# Setup env quickly (Ubuntu)
 
 ## Zsh
 
@@ -22,7 +22,7 @@ sudo apt install zsh
 curl -fsSL https://fnm.vercel.app/install | bash
 ```
 
-_install node_
+_install node_:
 ```bash
 fnm install --lts
 ```
