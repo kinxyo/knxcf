@@ -3,14 +3,8 @@
 
 add_newline = true # Inserts a blank line between shell prompts
 
-[package] # package module
+[package]
 disabled = true
-
-# DON'T TOUCH THIS -- It removes "in $package" from prompt when in Rust project.
-format = '''
-[┌───────────────────>](bold green)
-[│](bold green)$directory$rust$package
-[└─>](bold green) '''
 
 [battery]
 full_symbol = '🔋 '
@@ -31,6 +25,8 @@ vimcmd_symbol = "[❮](green)"
 [directory]
 home_symbol = "⌂"
 style = "dimmed white"
+truncation_length = 1
+read_only = " 󰌾"
 
 [cmd_duration]
 format = "[$duration]($style) "
@@ -52,8 +48,6 @@ ignore_branches = ["master"]
 format = '[\($state( $progress_current of $progress_total)\)]($style) '
 cherry_pick = '[🍒 PICKING](bold red)'
 
-# ~/.config/starship.toml
-
 [git_status]
 format = '([$all_status$ahead_behind]($style)) '
 conflicted = '[⭕](inverted red)'
@@ -72,11 +66,45 @@ deleted = '[ \($count\) deleted ](inverted white)'
 #
 # The following is for removing `via` & `$version` FROM Default Prompt.
 
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"ProductionGrade" = "󰲋 "
+"Corporate" = "󰲋 "
+
 [bun]
 format = "[$symbol]($style)"
 
 [buf]
 format = "[$symbol]($style)"
+
+[c]
+symbol = " "
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [cmake]
 format = "[$symbol]($style)"
@@ -91,6 +119,7 @@ format = "[$symbol]($style)"
 format = "[$symbol]($style)"
 
 [dart]
+symbol = " "
 format = "[$symbol]($style)"
 
 [deno]
@@ -126,12 +155,14 @@ format = '[$symbol]($style)'
 format = '[$symbol]($style)'
 
 [java]
+symbol = " "
 format = '[$symbol]($style)'
 
 [julia]
 format = '[$symbol]($style)'
 
 [kotlin]
+symbol = ""
 format = '[$symbol]($style)'
 
 [lua]
@@ -144,6 +175,7 @@ format = '[$symbol]($style)'
 format = '[$symbol]($style)'
 
 [nodejs]
+symbol = " "
 format = '[$symbol]($style)'
 
 [ocaml]
@@ -156,7 +188,18 @@ format = '[$symbol]($style)'
 format = '[$symbol]($style)'
 
 [php]
+symbol = ""
 format = '[$symbol]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:color_bg3"
+format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:color_blue"
+format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 
 [pulumi]
 format = '[$symbol$stack]($style)'
@@ -165,7 +208,8 @@ format = '[$symbol$stack]($style)'
 format = '[$symbol]($style)'
 
 [python]
-style = "fg:#86BBD8" # change color
+symbol = '  '
+style = "fg:green" # change color
 format = '$virtualenv [${symbol}]($style)'
 
 [quarto]

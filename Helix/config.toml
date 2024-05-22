@@ -12,9 +12,6 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
-[editor.lsp]
-display-messages = true
-
 [keys.normal]
 X = "extend_line_above"
 ret = "goto_first_nonwhitespace"
@@ -34,4 +31,7 @@ e = ":wq"
 [keys.insert]
 C-k = "normal_mode" # doesn't work unless "rich keyboard protocol" or something like this is enabled in terminal. Will work in Kitty.
 C-ret = "completion"
+
+[editor.lsp]
+display-messages = true
 
