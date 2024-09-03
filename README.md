@@ -75,3 +75,5 @@ sudo sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.loca
 ```
 
 _[get the real icon](https://github.com/kovidgoyal/kitty/issues/3618) then replace it._
+
+find [themes](https://ismailefe.org/blog/favorite_themes/).
