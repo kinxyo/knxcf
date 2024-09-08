@@ -39,6 +39,12 @@ WORDCHARS=${WORDCHARS//[\/]}
 
 # !PATH!
 
+# Android Studio
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk/
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
 # Kitty
 export PATH="$PATH:~/.local/kitty.app"
 
@@ -58,31 +64,47 @@ export PATH=$PATH:/usr/local/go/bin
 # act
 export PATH=$PATH:$HOME/Applications/Act/
 
-# python
-alias python="python3"
-alias py="python3"
+# WebStorm
+export PATH=$PATH:$HOME/Applications/WebStorm-241.17890.13/bin/
+
+# Swift
+export PATH=/usr/local/swift/usr/bin:"$PATH"
 
 # !ALIAS!
 
+# languages
+alias python="python3"
+alias py="python3"
+alias killemu="adb devices | grep emulator | cut -f1 | while read line; do adb -s $line emu kill; done"
+alias nuxtup="bunx nuxi@latest init"
+
 # qol
 alias q="exit"
+alias hostup="sudo ufw enable"
+alias hostoff="sudo ufw disable"
 alias b="cd .."
 alias ls="ls --color=auto"
 alias v="hx ."
-alias work="cd ~/Documents/ProductionGrade/"
+alias -g learn="cd ~/Documents/Learn/"
+alias -g work="cd ~/Documents/ProductionGrade/"
+alias -g corp="cd ~/Documents/Corporate/"
+alias -g corpj="cd ~/Documents/Corporate/JKCSoftwares/IDMS"
+alias -g corpe="cd ~/Documents/Corporate/Ebix/Servebix"
 alias add="sudo apt install"
 alias ff="fd"
 alias clr="clear"
 alias cat="batcat"
 alias -g peak="-X batcat"
-alias nuxtup="bunx nuxi@latest init"
-alias -g tree="tree -L 2 -I \"node_modules|.git|target|tmp|venv\""
+alias tree="tree -L 2 -I \"node_modules|.git|target|tmp|venv\""
+alias treef="tree -L 10 -I \"node_modules|.git|target|tmp|venv\""
+alias del="rm -rf"
+alias desks="cd ~/.local/share/applications"
 
 # configurations
 alias zconf="hx ~/.zshrc"
 alias zrc="source ~/.zshrc" # Stands for `zsh source`
 alias sconf="hx ~/.config/starship.toml"
-alias hxconf="vim ~/.config/helix/config.toml"
+alias hxconf="hx ~/.config/helix/"
 alias hxc="hx ~/.config/helix/config.toml"
 alias zconfv="vim ~/.zshrc"
 alias tconf="hx ~/.tmux.conf"
@@ -92,6 +114,7 @@ alias kconf="hx ~/.config/kitty/kitty.conf"
 alias quiet="echo 0 | sudo tee /sys/module/snd_hda_intel/parameters/power_save_controller
 echo 0 | sudo tee /sys/module/snd_hda_intel/parameters/power_save
 "
+alias predock="sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0"
 alias camera="systemctl --user restart pipewire"
 alias internet="sudo iwconfig wlp0s20f3 power off"
 
@@ -106,3 +129,5 @@ eval "$(starship init zsh)"
 # fnm
 export PATH="/home/kinxyo/.local/share/fnm:$PATH"
 eval "`fnm env`"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
