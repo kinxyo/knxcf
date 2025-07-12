@@ -1,0 +1,31 @@
+theme = Banana Blueberry
+font-size = 16
+window-padding-x = 9
+window-height = 30
+window-width = 143
+gtk-titlebar = false
+copy-on-select = true
+background-opacity = 0.7 
+# background-opacity = 0.1 
+
+# SHORTCUTS
+keybind = ctrl+enter=unbind
+keybind = ctrl+shift+r=reload_config
+
+keybind = ctrl+shift+enter=new_split:auto
+keybind = ctrl+l=goto_split:right
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+k=scroll_page_up
+keybind = ctrl+j=scroll_page_down
+keybind = ctrl+space=next_tab
+keybind = ctrl+shift+space=previous_tab
+keybind = ctrl+n=toggle_split_zoom
+keybind = ctrl+'=clear_screen
+
+
+# keybind = ctrl+shift+i=inspector
+# keybind = ctrl+shift+l=new_split:down
+# keybind = global:cmd+'=toggle_quick_terminal
+
+
+

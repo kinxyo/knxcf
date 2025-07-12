@@ -74,31 +74,49 @@ export PATH=/usr/local/swift/usr/bin:"$PATH"
 
 # languages
 alias python="python3"
-alias py="python3"
+alias py="python"
 alias killemu="adb devices | grep emulator | cut -f1 | while read line; do adb -s $line emu kill; done"
 alias nuxtup="bunx nuxi@latest init"
 
 # qol
+alias zr="zig run";
+alias zrm="zig run main.zig";
+alias crun="clang *.c && ./a.out";
 alias q="exit"
 alias hostup="sudo ufw enable"
 alias hostoff="sudo ufw disable"
 alias b="cd .."
 alias ls="ls --color=auto"
 alias v="hx ."
-alias -g learn="cd ~/Documents/Learn/"
-alias -g work="cd ~/Documents/ProductionGrade/"
-alias -g corp="cd ~/Documents/Corporate/"
-alias -g corpj="cd ~/Documents/Corporate/JKCSoftwares/IDMS"
-alias -g corpe="cd ~/Documents/Corporate/Ebix/Servebix"
+alias learn="cd ~/Documents/Learn/"
+alias work="cd ~/Documents/ProductionGrade/"
+alias -g dsa="cd ~/Documents/DSA/"
+alias gos="cd ~/Documents/ProductionGrade/go-share"
+alias -g corp="cd ~/Documents/Corporate/JKCSoftwares"
+alias -g corpc="cd ~/Documents/Corporate/JKCSoftwares/CRM"
+alias -g corpjc="cd ~/Documents/Corporate/JKCSoftwares/IndiaBills/client"
+alias -g corpjs="cd ~/Documents/Corporate/JKCSoftwares/IndiaBills/server"
+alias -g corpp="cd ~/Documents/Corporate/JKCSoftwares/planboard"
+alias -g corpv="cd ~/Documents/Corporate/JKCSoftwares/Casino/vid-tool"
+alias -g corpw="cd ~/Documents/Corporate/JKCSoftwares/wix"
 alias add="sudo apt install"
 alias ff="fd"
 alias clr="clear"
 alias cat="batcat"
 alias -g peak="-X batcat"
-alias tree="tree -L 2 -I \"node_modules|.git|target|tmp|venv\""
+alias tree="tree -L 3 -I \"node_modules|.git|target|tmp|venv\""
+alias treec="tree -L 3 -I \"node_modules|.git|target|tmp|venv\" | xclip -selection clipboard"
+alias treem="tree -L 4 -I \"node_modules|.git|target|tmp|venv\""
+alias treemc="tree -L 4 -I \"node_modules|.git|target|tmp|venv\" | xclip -selection clipboard"
 alias treef="tree -L 10 -I \"node_modules|.git|target|tmp|venv\""
+alias treefc="tree -L 10 -I \"node_modules|.git|target|tmp|venv\" | xclip -selection clipboard"
 alias del="rm -rf"
 alias desks="cd ~/.local/share/applications"
+alias jhora="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Jagannatha\ Hora/bin/jhora.exe"
+alias zed="~/.local/bin/zed"
+alias kss="kitty --start-as fullscreen"
+alias openup="ssh root@<vps_ip>"
+alias dps='docker ps --format '\''table {{.ID}}\t{{.Names}}\t{{.Status}}'\'''
 
 # configurations
 alias zconf="hx ~/.zshrc"
@@ -109,6 +127,7 @@ alias hxc="hx ~/.config/helix/config.toml"
 alias zconfv="vim ~/.zshrc"
 alias tconf="hx ~/.tmux.conf"
 alias kconf="hx ~/.config/kitty/kitty.conf"
+alias gconf="hx ~/.config/ghostty/config"
 
 # system fix
 alias quiet="echo 0 | sudo tee /sys/module/snd_hda_intel/parameters/power_save_controller
@@ -131,3 +150,20 @@ export PATH="/home/kinxyo/.local/share/fnm:$PATH"
 eval "`fnm env`"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+#ZED (sus)
+export PATH=$HOME/.local/bin:$PATH
+
+#Zig (language server)
+export PATH=$HOME/Applications/zig:$PATH
+export PATH=$HOME/Applications/zls:$PATH
+
+#OpenCV 
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
+#Clang
+export CC=clang
+export CXX=clang++
+
+
