@@ -8,7 +8,7 @@
 - Install `bat`
 - Install `fkill`
 
-> ![WARNING]
+> [!WARNING]
 > My tooling has increased so bad I genuinely can't keep count anymore. Anyway these are essentials
 
 ### Install
