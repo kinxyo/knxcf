@@ -1,12 +1,14 @@
 # theme = "ayu_dark"
 # theme = "base16_default"
 # theme = "github_dark"
-# theme = "base16_transparent"
-theme = "modus_vivendi_tritanopia"
+theme = "base16_transparent"
+# theme = "modus_vivendi_tritanopia"
+# theme = "amberwood"
 
 [editor]
 line-number = "relative"
 true-color = true
+bufferline = "always"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -28,7 +30,10 @@ a = ["collapse_selection", "append_mode", "collapse_selection"]
 [keys.normal.space]
 "space" = ":w"
 q = ":q"
+x = ":bc"
 e = ":wq"
+n = "goto_previous_buffer"
+m = "goto_next_buffer"
 
 [keys.insert]
 C-k = "normal_mode" # doesn't work unless "rich keyboard protocol" or something like this is enabled in terminal. Will work in Kitty.
