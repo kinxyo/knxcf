@@ -5,11 +5,11 @@ formatter = { command = "prettier", args = ["--parser", "vue"] }
 language-servers = ["vuels", "typescript-language-server"] # Emmet en snippet completion for the last 2
 
 [language-server]
-vuels = { command = "vue-language-server", args = ["--stdio"], config = { typescript = { tsdk = "/home/yourusername/.local/share/fnm/node-versions/v20.13.0/installation/lib/node_modules/typescript/lib" } } }
+vuels = { command = "vue-language-server", args = ["--stdio"], config = { typescript = { tsdk = "/home/kinxyo/.local/share/fnm/node-versions/v20.13.0/installation/lib/node_modules/typescript/lib" } } }
 
 [[language-server.typescript-language-server.config.plugins]]
 name = "@vue/typescript-plugin"
-location = "/home/yourusername/.local/share/fnm/node-versions/v20.13.0/installation/lib/node_modules/@vue/typescript-plugin/lib"
+location = "/home/kinxyo/.local/share/fnm/node-versions/v20.13.0/installation/lib/node_modules/@vue/typescript-plugin/lib"
 languages = ["vue"]
 
 [[language]]
@@ -20,4 +20,13 @@ language-servers = [ "pyright" ]
 name = "jsx"
 language-servers = [ "typescript-language-server", "eslint", "emmet-ls" ]
 formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
-auto-format = true
+auto-format = false
+
+# npm list -g
+# /home/kinxyo/.local/share/fnm/node-versions/v20.13.0/installation/lib/node_modules/
+# /home/kinxyo/.local/share/fnm/node-versions/v20.13.0/installation/lib/node_modules/@vue/typescript-plugin/lib
+
+[[language]]
+name = "rust"
+auto-format = false
+
