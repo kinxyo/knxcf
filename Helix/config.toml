@@ -2,6 +2,14 @@
 # theme = "base16_default"
 # theme = "github_dark"
 theme = "base16_transparent"
+# theme = "hex_lavender"
+# theme = "dracula"
+# theme = "horizon-dark"
+# theme = "kanagawa-dragon"
+# theme = "doom_acario_dark"
+# theme = "curzon"
+# theme = "bogster"
+# theme = "dracula_at_night"
 # theme = "modus_vivendi_tritanopia"
 # theme = "amberwood"
 
@@ -26,6 +34,7 @@ C-z = "collapse_selection"
 '`' =  ["collapse_selection", "keep_primary_selection", "delete_selection"] # PRODUCTIVITY 1000
 i = ["collapse_selection", "insert_mode"]
 a = ["collapse_selection", "append_mode", "collapse_selection"]
+D = "delete_selection_noyank"
 
 [keys.normal.space]
 "space" = ":w"
@@ -34,11 +43,18 @@ x = ":bc"
 e = ":wq"
 n = "goto_previous_buffer"
 m = "goto_next_buffer"
+f = "file_picker_in_current_directory"
+F = "file_picker"
+K = "suspend"
 
 [keys.insert]
 C-k = "normal_mode" # doesn't work unless "rich keyboard protocol" or something like this is enabled in terminal. Will work in Kitty.
 'C-]' = ["normal_mode", "goto_line_end", "append_mode", "collapse_selection"] # REQUIRES `Rich Keyboard Protocol`.
 C-ret = "completion"
 
+[keys.select]
+D = "delete_selection_noyank"
+
 [editor.lsp]
 display-messages = true
+

@@ -1,12 +1,23 @@
-theme = Banana Blueberry
+# gtk-single-instance = true
+
+# theme = Banana Blueberry
+# theme = CyberpunkScarletProtocol
+theme = catppuccin-mocha
+
+
 font-size = 16
+font-family = "SF Pro Display Regular"
 window-padding-x = 9
 window-height = 30
-window-width = 143
+window-width = 96
+# window-width = 100
 gtk-titlebar = false
 copy-on-select = true
-background-opacity = 0.7 
+# background-opacity = 0.7 
 # background-opacity = 0.1 
+# cursor-style-blink = true
+# link-url = true
+# cursor-invert-fg-bg = true
 
 # SHORTCUTS
 keybind = ctrl+enter=unbind
@@ -26,6 +37,7 @@ keybind = ctrl+'=clear_screen
 # keybind = ctrl+shift+i=inspector
 # keybind = ctrl+shift+l=new_split:down
 # keybind = global:cmd+'=toggle_quick_terminal
+
 
 
 

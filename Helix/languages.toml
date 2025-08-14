@@ -1,16 +1,73 @@
+# ****** Vue ********
+
+# Install these first:
+# bun add -g @volar/vue-language-server
+# bun add -g @vue/typescript-plugin
+
 [[language]]
 name = "vue"
-auto-format = false
+auto-format = true
 formatter = { command = "prettier", args = ["--parser", "vue"] }
-language-servers = ["vuels", "typescript-language-server"] # Emmet en snippet completion for the last 2
-
-[language-server]
-vuels = { command = "vue-language-server", args = ["--stdio"], config = { typescript = { tsdk = "/home/kinxyo/.local/share/fnm/node-versions/v20.13.0/installation/lib/node_modules/typescript/lib" } } }
+language-servers = ["typescript-language-server", "emmet-ls"]
 
 [[language-server.typescript-language-server.config.plugins]]
 name = "@vue/typescript-plugin"
-location = "/home/kinxyo/.local/share/fnm/node-versions/v20.13.0/installation/lib/node_modules/@vue/typescript-plugin/lib"
+location = "/home/kinxyo/.bun/install/global/node_modules/@vue/typescript-plugin"
 languages = ["vue"]
+
+# Volar is the official Vue Language Server - much better for Vue than TS server
+[language-server.volar]
+command = "vue-language-server"
+args = ["--stdio"]
+
+[language-server.volar.config]
+typescript = { tsdk = "/home/kinxyo/.bun/install/global/node_modules/typescript/lib" }
+
+# Enable better HTML support in Vue templates
+[language-server.volar.config.vue]
+hybridMode = false
+
+[language-server.volar.config.vue.complete.casing]
+tags = "kebab"
+props = "camel"
+
+# Keep emmet for HTML shortcuts
+[language-server.emmet-ls]
+command = "emmet-ls"
+args = ["--stdio"]
+
+# Optional: Add HTML language server for even better HTML support
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server", "emmet-ls"]
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "html"] }
+
+[language-server.vscode-html-language-server]
+command = "vscode-html-language-server"
+args = ["--stdio"]
+
+# ****** BACKUP (vue) ********
+
+# [[language]]
+# name = "vue"
+# auto-format = true
+# formatter = { command = "prettier", args = ["--parser", "vue"] }
+# language-servers = ["typescript-language-server", "emmet-ls"]
+
+# [[language-server.typescript-language-server.config.plugins]]
+# name = "@vue/typescript-plugin"
+# location = "/home/kinxyo/.bun/install/global/node_modules/@vue/typescript-plugin"
+# languages = ["vue"]
+
+# [language-server.emmet-ls]
+# command = "emmet-ls"
+# args = []
+
+# [language-server.vuels.config.typescript]
+# tsdk = "/home/kinxyo/.bun/install/global/node_modules/typescript/lib"
+
+# ****** OTHER LANG(s) ********
 
 [[language]]
 name = "python"
@@ -22,11 +79,8 @@ language-servers = [ "typescript-language-server", "eslint", "emmet-ls" ]
 formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 auto-format = false
 
-# npm list -g
-# /home/kinxyo/.local/share/fnm/node-versions/v20.13.0/installation/lib/node_modules/
-# /home/kinxyo/.local/share/fnm/node-versions/v20.13.0/installation/lib/node_modules/@vue/typescript-plugin/lib
-
 [[language]]
 name = "rust"
 auto-format = false
+
 

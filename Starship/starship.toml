@@ -1,7 +1,7 @@
 # STYLING GUIDE ↴
 # https://starship.rs/advanced-config/#style-strings
 
-add_newline = true # Inserts a blank line between shell prompts
+add_newline = false # Inserts a blank line between shell prompts
 
 [package]
 disabled = true
@@ -12,7 +12,7 @@ charging_symbol = '⚡️ '
 discharging_symbol = '💀 '
 
 [[battery.display]]
-threshold = 0 # disabled
+threshold = 1 # disabled
 style = 'bold blue'
 
 # CONFIGURATION STARTS ----------->
@@ -37,6 +37,13 @@ show_always = true
 style_user = "fg:#9A348E"
 style_root = "fg:#9A348E"
 format = '[$user ]($style)'
+# format = """
+# [┗](blue)$character"""
+# format = """
+# [](fg:#ff79c6)[$custom.spinner](bg:#ff79c6 fg:black)[](fg:#ff79c6) \
+# [](fg:#8be9fd)$directory[](fg:#8be9fd) \
+# $git_branch$git_status
+# $character"""
 disabled = true
 
 [git_branch]
