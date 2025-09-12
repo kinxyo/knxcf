@@ -1257,6 +1257,35 @@ format = '[$symbol]($style)'
 format = '[$symbol($version)]($style) '
 ```
 
+### Mpv Configs
+
+#### `~/.config/mpv/mpv.conf`
+
+```conf
+# Loop GIFs automatically
+[extension.gif]
+loop-file=inf
+
+# Optional: also loop other image formats
+[extension.png]
+loop-file=inf
+
+[extension.jpg]
+loop-file=inf
+
+[extension.jpeg]
+loop-file=inf
+```
+
+#### `~/.config/input.conf`
+
+```conf
+# Rotation keybinds
+r set video-rotate 90
+R set video-rotate -90
+CTRL+r set video-rotate 0
+```
+
 ### `mpvpaper` (Lively wallpaper alternative on Linux)
 
 Download it from **AUR** repo:
