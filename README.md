@@ -21,7 +21,7 @@ Setup guide for `CachyOS+Hyprland`.
 #### Tools
 
 ```
-sudo pacman -S zsh git ghostty helix lf glow tree nautilus
+sudo pacman -S zsh git ghostty helix lf glow tree nautilus mpv imv
 ```
 
 ```
@@ -1213,6 +1213,12 @@ format = '[$symbol]($style)'
 
 [zig]
 format = '[$symbol($version)]($style) '
+```
+
+### `mpvpaper` (Lively wallpaper alternative on Linux)
+
+```
+paru -S mpvpaper
 ```
 
 ### Zen Browser
