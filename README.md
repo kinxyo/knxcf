@@ -76,6 +76,13 @@ alias treef="tree -L 10 -I \"node_modules|.git|target|tmp|venv\""
 alias treefc="tree -L 10 -I \"node_modules|.git|target|tmp|venv\" | wl-copy"
 alias zr="zig run main.zig"
 alias pwc="pwd | wl-copy"
+
+# Air
+export PATH=$PATH:$(go env GOPATH)/bin
+
+# FIXES (sound problem)
+# pactl set-default-sink alsa_output.pci-0000_06_00.6.analog-stereo
+# notify-send "Audio fixed - laptop speakers set as default"
 ```
 
 ### Helix
@@ -84,7 +91,8 @@ alias pwc="pwd | wl-copy"
 # theme = "ayu_dark"
 # theme = "base16_default"
 # theme = "github_dark"
-theme = "base16_transparent"
+# theme = "base16_transparent"
+theme = "carbonfox"
 # theme = "hex_lavender"
 # theme = "dracula"
 # theme = "horizon-dark"
@@ -367,9 +375,38 @@ binds {
 }
 ```
 
+#### Variables (fix)
+
+Remove `gestures {}` and add this instead:
+
+```
+gesture = 4, horizontal, workspace,
+```
+
+#### Input
+
+```conf
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+# ┃                      Input Configuration                    ┃
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+# Input wiki https://wiki.hyprland.org/Configuring/Variables/#input
+
+input {
+    follow_mouse = 2 # 0|1|2|3
+    float_switch_override_focus = 2
+}
+
+device {
+    name = ftcs0038:00-2808:0106-touchpad
+    natural_scroll = true
+}
+```
+
 #### Monitors
 
 ```conf
+# 
 # ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 # ┃                     Monitor Configuration                   ┃
 # ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
@@ -379,9 +416,11 @@ binds {
 # monitor = , preferred, auto, 1
 # monitor =eDP-1, preferred, auto, 1
 # monitor = HDMI-A-1, preferred, auto, 1
-# monitor=HDMI-A-1,1920x1080@120,0x0,1
-monitor=eDP-1,1920x1080@144,0x0,1.25
-# monitor=eDP-1,disable
+# monitor=eDP-1,1920x1080@144,0x0,1.25
+# monitor=HDMI-A-1,1920x1080@180,1920x0,1.25
+monitor=HDMI-A-1,1920x1080@180,0x0,1.25
+monitor=eDP-1,disable
+
 
 # If you need to scale things like steam etc, please uncomment these lines.
 xwayland {
@@ -389,7 +428,10 @@ xwayland {
 }
 
 # Adjust GDK_SCALE accordingly to your liking.
-env = GDK_SCALE, 1.25                   # GDK Scaling Factor
+env = GDK_SCALE, 2                # GDK Scaling Factor (no fractional scaling)
+
+# Electron based apps use X11 as default, auto should detect wayland
+env = ELECTRON_OZONE_PLATFORM_HINT, auto
 ```
 
 #### Defaults
@@ -460,8 +502,8 @@ $cachygray = rgba(798bb2ff)
         "format-icons": {
             "1": "󰋜",
             "2": "󰈹",
-            "3": "󰊴",
-            "4": "󰝚",
+            "3": "󰝚",
+            "4": "󰊴",
             "default": "󰋙"
         },
         "persistent-workspaces": {
@@ -1217,8 +1259,15 @@ format = '[$symbol($version)]($style) '
 
 ### `mpvpaper` (Lively wallpaper alternative on Linux)
 
+Download it from **AUR** repo:
+
 ```
 paru -S mpvpaper
+```
+Then use it liek this:
+
+```
+mpvpaper -o "no-audio loop" '*' <path>/<file_name>.mp4
 ```
 
 ### Zen Browser
